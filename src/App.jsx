@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Card, CardContent } from "./components/ui/Card";
+import { Card } from "./components/ui/Card";
+import { CardContent } from "./components/ui/CardContent";
 
 export default function App() {
   const [submitted, setSubmitted] = useState(false);
