@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import { Button } from "../components/ui/button";
 import { Star, Trash2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from 'emailjs-com';
