@@ -127,6 +127,3 @@ export default function App() {
   style={{ border: "none", overflow: "hidden", width: "100%", height: "500px" }} 
   title="Posts from Instagram">
 </iframe>
-</div> {/* Ensure this is the closing tag of the container element */}
-</div> {/* Closing div for App component or parent div */}
-</div> {/* Closing div for the outer container */}
