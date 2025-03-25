@@ -118,16 +118,15 @@ export default function App() {
         <h3 className="text-xl font-semibold text-center text-pink-600 mb-4">Follow Us on Instagram 📷</h3>
         <div className="flex justify-center space-x-4">
           {/* SnapWidget Embed here */}
-          <iframe
-            src="https://snapwidget.com/embed/yourwidgetID"
-            className="snapwidget-widget"
-            allowtransparency="true"
-            frameBorder="0"
-            scrolling="no"
-            style={{ border: "none", overflow: "hidden", width: "100%", height: "500px" }}
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  );
-}
+<iframe 
+  src="https://snapwidget.com/embed/1091548" 
+  className="snapwidget-widget" 
+  allowtransparency="true" 
+  frameborder="0" 
+  scrolling="no" 
+  style={{ border: "none", overflow: "hidden", width: "100%", height: "500px" }} 
+  title="Posts from Instagram">
+</iframe>
+</div> {/* Ensure this is the closing tag of the container element */}
+</div> {/* Closing div for App component or parent div */}
+</div> {/* Closing div for the outer container */}
