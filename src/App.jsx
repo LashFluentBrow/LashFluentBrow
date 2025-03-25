@@ -126,6 +126,6 @@ export default function App() {
   scrolling="no" 
   style={{ border: "none", overflow: "hidden", width: "100%", height: "500px" }} 
   title="Posts from Instagram" />
-</div> {/* Closing div for the iframe section */}
-</div> {/* Closing div for the component layout */}
-</div> {/* Closing div for the outermost container */}
+</div>
+</div>
+</div>
