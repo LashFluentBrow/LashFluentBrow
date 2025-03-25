@@ -125,10 +125,9 @@ export default function App() {
       scrolling="no" 
       style={{ border: "none", overflow: "hidden", width: "100%", height: "500px" }} 
       title="Posts from Instagram" />
-  </div> {/* Closing div for Instagram grid */}
-</div> {/* Closing div for Instagram section */}
-
-</div> {/* Closing main container */}
+      </div> {/* Closing div for Instagram grid */}
+    </div> {/* Closing div for Instagram section */}
+  </div> {/* Closing main container */}
   );
 }
 
