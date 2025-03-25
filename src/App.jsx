@@ -125,5 +125,4 @@ export default function App() {
   frameborder="0" 
   scrolling="no" 
   style={{ border: "none", overflow: "hidden", width: "100%", height: "500px" }} 
-  title="Posts from Instagram">
-</iframe>
+  title="Posts from Instagram" />
