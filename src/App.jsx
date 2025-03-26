@@ -125,7 +125,7 @@ export default function App() {
           src="https://snapwidget.com/embed/1091548" 
           className="snapwidget-widget"
           allowtransparency="true"
-          frameborder="0"
+          frameBorder="0"
           scrolling="no"
           style={{ border: "none", overflow: "hidden", width: "100%", height: "500px" }}
           title="Posts from Instagram"
@@ -133,6 +133,7 @@ export default function App() {
       </div>
     </CardContent>
   </Card>
+</div>
 </div>
   );
 }
