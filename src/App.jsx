@@ -113,7 +113,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Instagram Grid */}
+     {/* Instagram Grid */}
 <div className="mt-10 w-full max-w-xl">
   <Card className="border-2 border-black shadow-xl rounded-2xl p-6">
     <CardContent>
@@ -129,8 +129,12 @@ export default function App() {
           scrolling="no"
           style={{ border: "none", overflow: "hidden", width: "100%", height: "500px" }}
           title="Posts from Instagram"
-        />
+        ></iframe>
       </div>
     </CardContent>
   </Card>
 </div>
+  );
+}
+
+
