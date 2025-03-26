@@ -12,22 +12,24 @@ export default function App() {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [comment, setComment] = useState("");
+  const [name, setName] = useState("");
   const [testimonials, setTestimonials] = useState([]);
 
+  // Fetch testimonials
+  const fetchTestimonials = async () => {
+    const { data, error } = await supabase
+      .from("testimonials")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("Failed to fetch testimonials:", error.message);
+    } else {
+      setTestimonials(data);
+    }
+  };
+
   useEffect(() => {
-    const fetchTestimonials = async () => {
-      const { data, error } = await supabase
-        .from("testimonials")
-        .select("*")
-        .order("created_at", { ascending: false });
-
-      if (error) {
-        console.error("Failed to fetch testimonials:", error.message);
-      } else {
-        setTestimonials(data);
-      }
-    };
-
     fetchTestimonials();
   }, []);
 
@@ -44,7 +46,6 @@ export default function App() {
             <form
               onSubmit={async (e) => {
                 e.preventDefault();
-                const name = e.target[0].value;
 
                 const { error } = await supabase.from("testimonials").insert([
                   {
@@ -59,11 +60,18 @@ export default function App() {
                   alert("There was an issue submitting your feedback.");
                 } else {
                   setSubmitted(true);
+                  setName("");
+                  setRating(0);
+                  setHover(0);
+                  setComment("");
+                  fetchTestimonials(); // Refresh testimonials list
                 }
               }}
               className="space-y-4"
             >
               <Input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Your name (optional)"
                 className="w-full border px-3 py-2 rounded-md"
               />
@@ -124,45 +132,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* Before and After Gallery */}
-      <div className="mt-10">
-        <h3 className="text-xl font-semibold text-center text-pink-600 mb-4">
-          Before & After Gallery
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div>
-            <h4 className="text-lg text-center text-pink-600">Brows</h4>
-            <div className="grid grid-cols-2 gap-4">
-              <img
-                src="brow-before.jpg"
-                alt="Before Brow"
-                className="w-full h-56 object-cover"
-              />
-              <img
-                src="brow-after.jpg"
-                alt="After Brow"
-                className="w-full h-56 object-cover"
-              />
-            </div>
-          </div>
-          <div>
-            <h4 className="text-lg text-center text-pink-600">Lashes</h4>
-            <div className="grid grid-cols-2 gap-4">
-              <img
-                src="lash-before.jpg"
-                alt="Before Lash"
-                className="w-full h-56 object-cover"
-              />
-              <img
-                src="lash-after.jpg"
-                alt="After Lash"
-                className="w-full h-56 object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Instagram Grid */}
       <div className="mt-10 w-full max-w-xl">
         <Card className="border-2 border-black shadow-xl rounded-2xl p-6">
@@ -192,4 +161,3 @@ export default function App() {
     </div>
   );
 }
-// Trigger redeploy
